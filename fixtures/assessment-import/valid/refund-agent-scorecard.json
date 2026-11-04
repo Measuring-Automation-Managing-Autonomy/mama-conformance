@@ -1,0 +1,8 @@
+{
+  "ruleset_version": "2.0.0",
+  "scores": { "D1": 4, "D2": 4, "D3": 3, "D4": 4, "D5": 3, "D6": 3 },
+  "safe_grant_level": 3,
+  "granted_level": 2,
+  "notes": ["headroom: safe level exceeds granted level by 1; expand after 2 clean review cycles"],
+  "recommended_move": "expand (after 2 clean cycles): raise one level or widen scope in the strongest dimension"
+}

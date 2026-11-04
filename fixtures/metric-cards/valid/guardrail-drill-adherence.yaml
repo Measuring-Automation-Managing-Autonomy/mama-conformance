@@ -1,0 +1,63 @@
+schema_version: "1.0.0"
+id: guardrail-drill-adherence
+title: Guardrail drill adherence
+version: "0.1.0"
+status: draft
+category: exceptions-reliability
+purpose: >
+  Describes whether the guardrail exercises (drills, failover tests, safe-stop
+  and rollback rehearsals) that a use case's risk review committed to actually
+  happened, on cadence, with recorded results — turning "we have limits" into
+  "we test our limits".
+decision_use: >
+  Informs operating-design and control decisions: whether guardrail confidence
+  is earned or assumed; input to the practice maturity model's guardrail
+  engineering dimension (stage 3+) and to risk/impact reviews.
+formula: >
+  (drill exercises completed and recorded in the window, with results) /
+  (drill exercises the control plan required in the window), expressed as percent.
+  Each drill is counted once per planned exercise; a drill without a recorded
+  result does not count as completed.
+unit: percent
+denominator: >
+  All drills the control plan required in the window, derived from the versioned
+  drill schedule — not from what teams remember doing. A missing schedule makes
+  this card unmeasurable; record that fact rather than improvising a denominator.
+inclusions:
+  - Scheduled drills, unplanned real trips exercised and recorded, and tabletop exercises only if the control plan counts them
+  - Drills of any named guardrail class (safe stop, rollback, budget cap, rate limit, approval gate)
+exclusions:
+  - Genuine production incidents (they are evidence, but not drills; record them in incident data)
+  - Drills of controls not in the versioned control plan
+data_source: >
+  Drill/test calendar and the artifacts each drill produces (logs, tickets,
+  results record); join requires the control plan to be versioned and referenced.
+sampling: Census of planned drills in the window
+time_window: Rolling 90 days (aligns with a quarterly control-review cadence)
+owner_role: Control/operations owner named in the risk/impact review
+baseline_requirement: >
+  Record the pre-existing drill practice honestly — often zero or informal;
+  the baseline makes the discipline delta real.
+target_guidance: >
+  Targets come from the control plan and risk tier (e.g., "every high-consequence
+  guardrail drilled at least twice per quarter"), never from a universal benchmark.
+  100% adherence with trivial drills is worse than 80% adherence with consequential
+  ones — pair with drill severity notes.
+uncertainty: >
+  Sensitive to what counts as a "drill" and to schedule realism; report the
+  control-plan version and any cancelled/postponed drills with their reasons.
+limitations:
+  - Adherence measures practice discipline, not guardrail effectiveness — a passing drill of a weak guardrail is weak evidence; pair with the risk/impact review.
+  - Can be gamed by scheduling trivial drills; drill plans should be versioned and reviewed.
+  - Not comparable across use cases with different control-plan cadences without normalization notes.
+review_cadence: Quarterly
+related_metrics:
+  - exception-rate
+  - recovery-time
+  - availability
+adverse_use_warnings:
+  - Never present drill adherence as safety — a drilled limit that fails its drill is a finding, not a comfort.
+  - Never use this card alone to justify expanding autonomy grants; grant reviews belong to the upstream mama method with its own evidence rules.
+references:
+  - "mama-framework maturity-model.md v0.2.0 dimension D-A (stage 3+)"
+  - "mama-framework templates/risk-impact-review.md v0.1.0 (control plan source)"

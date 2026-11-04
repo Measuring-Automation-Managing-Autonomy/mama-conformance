@@ -1,0 +1,28 @@
+{
+  "schema": 2,
+  "contracts": [
+    {
+      "id": "refund-agent-v2",
+      "unit": "support-refund-agent",
+      "domain": "customer-refunds",
+      "level": 3,
+      "scope": "Refund decisions up to $200 from an allow-list of reasons; above or off-list escalates before execution.",
+      "guardrails": [],
+      "telemetry": [
+        "Structured decision log per refund",
+        "Spend/refusal/escalation dashboard, grantor-visible"
+      ],
+      "revocation_triggers": [
+        "Any guardrail trip without a matching drill",
+        "Spend above either cap"
+      ],
+      "escalation": "support-lead -> support-director, 1-hour SLA business hours",
+      "grantor": "support-director",
+      "horizon": "2026-12-31",
+      "last_review": "2025-12-15",
+      "review_cadence_days": 90,
+      "status": "active",
+      "notes": "Schema-2 fixture mirrored from upstream examples/agents-ledger.yaml"
+    }
+  ]
+}

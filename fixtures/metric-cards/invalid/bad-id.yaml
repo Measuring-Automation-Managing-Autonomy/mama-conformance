@@ -1,0 +1,19 @@
+schema_version: "1.0.0"
+id: Straight Through
+title: Straight-through completion rate
+version: "0.1.0"
+status: draft
+category: performance
+purpose: fixture
+decision_use: fixture
+formula: "numerator / denominator as percent"
+unit: percent
+data_source: fixture
+sampling: census
+time_window: rolling 30 days
+owner_role: service owner
+baseline_requirement: fixture
+target_guidance: fixture
+uncertainty: fixture
+limitations: [fixture]
+review_cadence: monthly
