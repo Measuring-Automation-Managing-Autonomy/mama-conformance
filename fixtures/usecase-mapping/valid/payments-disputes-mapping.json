@@ -1,7 +1,14 @@
 {
-  "usecase_id": "usecase-payments-disputes",
-  "unit": "payments-team",
-  "domain": "production-deploys",
-  "ruleset_version": "2.0.0",
-  "ledger_schema": 2
+  "mappings": [
+    {
+      "mama_use_case_id": "usecase-payments-disputes",
+      "project_id": "proj-2026-014",
+      "mama_unit": "payments-team",
+      "mama_domain": "production-deploys",
+      "mama_contract_id": "payments-deploys-v2",
+      "ruleset_version": "2.0.0",
+      "ledger_schema": 2,
+      "linked_at": "2026-11-05"
+    }
+  ]
 }

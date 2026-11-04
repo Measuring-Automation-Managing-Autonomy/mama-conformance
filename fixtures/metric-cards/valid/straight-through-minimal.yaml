@@ -4,16 +4,34 @@ title: Straight-through completion rate
 version: "0.1.0"
 status: draft
 category: performance
-purpose: fixture
-decision_use: fixture
+purpose: >
+  Fixture card for the mama-conformance suite; prose fields carry realistic
+  length because the schema enforces minimum lengths on them.
+decision_use: >
+  Informs operating-design decisions in the conformance fixtures only; this
+  card mirrors the upstream definition's shape, not its full guidance.
 formula: "numerator / denominator as percent"
 unit: percent
-data_source: fixture
-sampling: census
+denominator: All items entering the process in the window, including failures
+inclusions:
+  - Manual interventions of any kind count against straight-through
+exclusions:
+  - Items not intended for the automated path
+data_source: >
+  End-to-end process logs; in the conformance suite this field exists to
+  satisfy the schema's prose minimums.
+sampling: Census
 time_window: rolling 30 days
-owner_role: service owner
-baseline_requirement: fixture
-target_guidance: fixture
-uncertainty: fixture
-limitations: [fixture]
+owner_role: service/process owner
+baseline_requirement: >
+  Record the pre-automation equivalent honestly; fixture guidance mirrors the
+  upstream card's baseline discipline.
+target_guidance: >
+  Targets come from the use-case value hypothesis, never from a universal
+  benchmark; the fixture carries no target.
+uncertainty: >
+  Sensitive to intervention detection; report detection method and blind spots
+  with the number, as the upstream card requires.
+limitations:
+  - "Fixture limitation: not a real operational definition; use the upstream card."
 review_cadence: monthly

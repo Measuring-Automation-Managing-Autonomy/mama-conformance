@@ -24,39 +24,49 @@ SUITES = [
         "name": "metric-cards",
         "repo": "mama-metrics",
         "schema_path": "schema/metric-card.schema.json",
-        "root": "fixtures/metric-cards",
+        "root": "metric-cards",
     },
     {
         "name": "assessment-import",
         "repo": "mama-integrations",
         "schema_path": "contracts/assessment-import.schema.json",
-        "root": "fixtures/assessment-import",
+        "root": "assessment-import",
     },
     {
         "name": "ledger-import",
         "repo": "mama-integrations",
         "schema_path": "contracts/ledger-import.schema.json",
-        "root": "fixtures/ledger-import",
+        "root": "ledger-import",
     },
     {
         "name": "usecase-mapping",
         "repo": "mama-integrations",
         "schema_path": "contracts/usecase-mapping.schema.json",
-        "schema_patch": {"required": ["usecase_id", "unit", "domain", "ruleset_version", "ledger_schema"]},
-        "root": "fixtures/usecase-mapping",
+        "root": "usecase-mapping",
     },
     {
         "name": "usecase-record",
         "repo": "mama-tools",
         "schema_path": "schemas/usecase-record.schema.json",
-        "root": "fixtures/usecase-record",
+        "root": "usecase-record",
     },
 ]
 
 
+def _coerce_dates(node):
+    import datetime as dt
+    if isinstance(node, dt.date) and not isinstance(node, dt.datetime):
+        return node.isoformat()
+    if isinstance(node, dict):
+        return {k: _coerce_dates(v) for k, v in node.items()}
+    if isinstance(node, list):
+        return [_coerce_dates(v) for v in node]
+    return node
+
+
 def load(path: Path):
     if path.suffix in (".yaml", ".yml"):
-        return yaml.safe_load(path.read_text(encoding="utf-8"))
+        return _coerce_dates(yaml.safe_load(path.read_text(encoding="utf-8")))
     return json.loads(path.read_text(encoding="utf-8"))
 
 
