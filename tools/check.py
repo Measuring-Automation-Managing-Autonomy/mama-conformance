@@ -50,6 +50,18 @@ SUITES = [
         "schema_path": "schemas/usecase-record.schema.json",
         "root": "usecase-record",
     },
+    {
+        "name": "series-record",
+        "repo": "mama-tools",
+        "schema_path": "schemas/series-record.schema.json",
+        "root": "series-record",
+    },
+    {
+        "name": "tracker-record",
+        "repo": "mama-tools",
+        "schema_path": "schemas/tracker-record.schema.json",
+        "root": "tracker-record",
+    },
 ]
 
 

@@ -1,0 +1,6 @@
+{
+  "series_version": "1.0.0",
+  "rows": [
+    { "usecase_id": "not-a-usecase-id", "card_id": "automation-coverage", "card_version": "0.1.0", "window": "2026-10", "value": 50, "label": "observed" }
+  ]
+}
