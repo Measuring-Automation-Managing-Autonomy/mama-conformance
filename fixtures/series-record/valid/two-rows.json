@@ -1,0 +1,7 @@
+{
+  "series_version": "1.0.0",
+  "rows": [
+    { "usecase_id": "usecase-refunds-agent", "card_id": "automation-coverage", "card_version": "0.1.0", "window": "2026-10", "value": 72.5, "label": "observed", "source_note": "workflow logs" },
+    { "usecase_id": "usecase-refunds-agent", "card_id": "exception-rate", "card_version": "0.1.0", "window": "2026-10", "value": 4.1, "label": "observed" }
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "tracker_version": "1.0.0",
+  "usecase_id": "usecase-refunds-agent",
+  "generated_at": "2026-11-05T09:00:00Z",
+  "axes": {
+    "automation": {
+      "value": 72.5,
+      "card_id": "automation-coverage",
+      "card_version": "0.1.0",
+      "window": "2026-10",
+      "label": "observed"
+    },
+    "autonomy": {
+      "index": 60.0,
+      "mean_level": 3.0,
+      "min_level": 2,
+      "domains": 2,
+      "ruleset_version": "2.0.0",
+      "ledger_schema": 2,
+      "contract_ids": [
+        "refund-agent-v2"
+      ]
+    },
+    "value": {
+      "value": -12.5,
+      "card_id": "realized-vs-forecast-benefit",
+      "card_version": "0.1.0",
+      "window": "2026-10",
+      "label": "observed",
+      "attribution": "partially established"
+    },
+    "composite_score": 55
+  },
+  "practice_profile": {
+    "stages": {
+      "D-A": 3,
+      "D-B": 4,
+      "D-C": 2,
+      "D-D": 3,
+      "D-E": 2
+    }
+  },
+  "provenance": {
+    "tool": "mama-tools",
+    "tool_version": "0.3.0"
+  }
+}
