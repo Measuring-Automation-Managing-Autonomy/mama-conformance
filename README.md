@@ -1,11 +1,11 @@
 # mama-conformance
 
-**MAMA** (Measuring Automation & Measuring Autonomy) shared conformance
+**MAMA** (Measuring Automation, Managing Autonomy) shared conformance
 fixtures: synthetic test data that every MAMA implementation must handle the
 same way, checked against the schemas of the source repos **at pinned
 commits** (`pins.json`).
 
-> **First reference:** MAMA (Measuring Automation & Measuring Autonomy) uses
+> **First reference:** MAMA (Measuring Automation, Managing Autonomy) uses
 > the `mama` (measuring and managing autonomy) method for its
 > autonomy-governance component; its canonical home is
 > [`emmanuel-a-otchere/measuring-and-managing-autonomy`](https://github.com/emmanuel-a-otchere/measuring-and-managing-autonomy).
